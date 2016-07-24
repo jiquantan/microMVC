@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean name="testHandler" class="org.microMVC.web.test.TestHandler"
+		scope="prototype">
+		
+	</bean>
+
+	<bean name="aop_before" class="org.microMVC.web.adviceImpl.BeforeAdviceImpl" />
+	<bean name="aop_after" class="org.microMVC.web.adviceImpl.AfterAdviceImpl" />
+	<bean name="aop_around" class="org.microMVC.web.adviceImpl.AroundAdviceImpl" />
+	<aop>
+		<aspect id="pointcut" classes="org.microMVC.web.test.TestHandler" method="handle">
+			<before bean-ref="aop_before" />
+			<after bean-ref="aop_after" />
+			<around bean-ref="aop_around" />
+		</aspect>
+	</aop>
+
+
+</beans>

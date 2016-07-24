@@ -1,0 +1,7 @@
+<mini-mvc>
+	<package name="myPack">
+		<handler name="testHandler" class="testHandler" method="handle">
+			<result name="success">success.jsp</result>
+		</handler>
+	</package>
+</mini-mvc>
